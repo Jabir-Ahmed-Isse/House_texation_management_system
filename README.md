@@ -1,62 +1,116 @@
-# House Taxation Management System
+# House Taxation Management System (HTMS)
 
-This project consists of a React Frontend and a Node.js/Express Backend.
+A full-stack web application for digitising municipal house-tax administration. HTMS centralises property and owner records, tax assessment, payment tracking, reporting, and administrative oversight in one secure platform.
 
-## Prerequisites
+## Features
 
-- **Node.js**: Ensure Node.js is installed.
-- **MongoDB**: Ensure MongoDB is installed and running locally on port `27017`.
+- Property and owner registration, search, and management
+- Tax rules, tax records, payment records, and outstanding-balance tracking
+- Property-transfer management
+- Dashboard analytics, district performance, and exportable reports
+- Interactive property map
+- Role-based access control with JWT authentication
+- User profiles, system settings, audit logs, and in-app notifications
+- Support tickets plus optional email and SMS notifications
+- Responsive React interface for administrative workflows
 
-## Step-by-Step Running Instructions
+## Technology
 
-### 1. Start the Backend
+| Area | Tools |
+| --- | --- |
+| Frontend | React, Vite, React Router, Tailwind CSS, Axios, Recharts, Leaflet |
+| Backend | Node.js, Express, Mongoose |
+| Database | MongoDB / MongoDB Atlas |
+| Security | JWT, bcryptjs, role-based authorisation |
+| Reporting | jsPDF, jsPDF-AutoTable, XLSX |
 
-The backend handles the API and database connections.
+## Project structure
 
-1. Open a terminal.
-2. Navigate to the `Backend` directory:
-   ```bash
-   cd Backend
-   ```
-3. Install dependencies (if not already done):
-   ```bash
-   npm install
-   ```
-4. Start the server:
-   ```bash
-   npm run dev
-   ```
-   *The server will start at `http://localhost:5000`.*
+```text
+.
+├── Frontend/                 # React and Vite client
+│   └── src/
+│       ├── pages/            # Dashboard, properties, taxes, reports, etc.
+│       ├── components/
+│       ├── context/
+│       └── services/
+├── Backend/                  # Express API
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── middleware/
+│   │   └── services/
+│   └── server.js
+└── README.md
+```
 
-### 2. Start the Frontend
+## Getting started
 
-The frontend is the user interface.
+### Prerequisites
 
-1. Open a **new** terminal window.
-2. Navigate to the `Frontend` directory:
-   ```bash
-   cd Frontend
-   ```
-3. Install dependencies (if not already done):
-   ```bash
-   npm install
-   ```
-4. Start the development server:
-   ```bash
-   npm run dev
-   ```
-   *The application will typically open at `http://localhost:5173`.*
+- Node.js 18 or later
+- A MongoDB database (local MongoDB or MongoDB Atlas)
 
-## Admin Credentials
+### 1. Configure the backend
 
-An admin user has been created in the backend:
+```bash
+cd Backend
+npm install
+```
 
-- **Email**: `admin@tax.so`
-- **Password**: `password123`
-- **Role**: `Super Admin`
+Create `Backend/.env` and set the required values:
 
-## Important Note
+```env
+PORT=5000
+MONGODB_URI=mongodb://127.0.0.1:27017/house_taxation_db
+JWT_SECRET=replace-with-a-long-random-secret
+```
 
-Currently, the **Frontend is running in "Mock Mode"**. This means it is using static data defined in the code and is **not yet connected** to the Backend API.
+For MongoDB Atlas, you may alternatively set `MONGODB_URI_BASE` and `MONGODB_PASSWORD`. Email and SMS features require their respective provider credentials.
 
-To connect them, the Frontend code needs to be updated to make API calls to `http://localhost:5000` instead of using local state.
+Start the API:
+
+```bash
+npm run dev
+```
+
+### 2. Configure and run the frontend
+
+Open another terminal:
+
+```bash
+cd Frontend
+npm install
+```
+
+Create `Frontend/.env`:
+
+```env
+VITE_API_URL=http://localhost:5000/api
+```
+
+Then start the client:
+
+```bash
+npm run dev
+```
+
+Open the local URL shown by Vite (usually `http://localhost:5173`).
+
+## Available modules
+
+- Dashboard and district performance
+- Properties, owners, and property transfers
+- Tax management and payment records
+- Reports and map view
+- Users, notifications, audit logs, profile, and settings
+- Owner portal and support tickets
+
+## Security
+
+HTMS protects administrative routes with JWT-based authentication and role middleware. Keep all `.env` files private, use a strong `JWT_SECRET`, and never commit credentials to the repository.
+
+## License
+
+This project is licensed under the ISC License. See the backend package metadata for details.
