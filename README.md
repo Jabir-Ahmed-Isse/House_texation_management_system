@@ -14,6 +14,30 @@ A full-stack web application for digitising municipal house-tax administration. 
 - Support tickets plus optional email and SMS notifications
 - Responsive React interface for administrative workflows
 
+## Screenshots
+
+Screenshots were taken with sample demo data.
+
+| Login | Dashboard |
+| --- | --- |
+| ![Login](docs/screenshots/01-login.png) | ![Dashboard](docs/screenshots/02-dashboard.png) |
+
+| Properties | Owners |
+| --- | --- |
+| ![Properties](docs/screenshots/03-properties.png) | ![Owners](docs/screenshots/04-owners.png) |
+
+| Tax Management | Payment Records |
+| --- | --- |
+| ![Tax Management](docs/screenshots/05-tax-management.png) | ![Payment Records](docs/screenshots/06-payment-records.png) |
+
+| Map View | Reports |
+| --- | --- |
+| ![Map View](docs/screenshots/07-map-view.png) | ![Reports](docs/screenshots/08-reports.png) |
+
+| District Performance |
+| --- |
+| ![District Performance](docs/screenshots/09-district-performance.png) |
+
 ## Technology
 
 | Area | Tools |
