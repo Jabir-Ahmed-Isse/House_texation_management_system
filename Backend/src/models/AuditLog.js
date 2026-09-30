@@ -20,6 +20,7 @@ const auditLogSchema = new mongoose.Schema({
         enum: [
             // Authentication
             'LOGIN_SUCCESS', 'LOGIN_FAIL', 'LOGOUT',
+            'PASSWORD_RESET_REQUEST', 'PASSWORD_RESET_SUCCESS',
             // Properties
             'CREATE_PROPERTY', 'UPDATE_PROPERTY', 'DELETE_PROPERTY',
             // Owners

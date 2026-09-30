@@ -29,6 +29,10 @@ const userSchema = new mongoose.Schema({
     riskLevel: { type: String, enum: ['Low', 'Medium', 'High'], default: 'Low' },
     verified: { type: Boolean, default: false },
 
+    // Password reset (forgot password via emailed verification code)
+    resetPasswordCode: { type: String, select: false },
+    resetPasswordExpires: { type: Date, select: false },
+
     createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     updatedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 }, { timestamps: true });
